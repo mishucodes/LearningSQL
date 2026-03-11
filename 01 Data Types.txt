@@ -1,0 +1,65 @@
+SQL DATA TYPES (Common Categories)
+
+01. NUMERIC:
+    Integers
+        (a) TINYINT (1 byte) -> Signed: -128 to 127 | Unsigned: 0 to 255
+        (b) SMALLINT (2 bytes) -> Signed: -32,768 to 32,767 | Unsigned: 0 to 65,535
+        (c) MEDIUMINT (3 bytes) -> Signed: -8,388,608 to 8,388,607 | Unsigned: 0 to 16,777,215
+        (d) INT/INTEGER (4 bytes) -> Signed: -2,147,483,648 to 2,147,483,647 | Unsigned: 0 to 4,294,967,295
+        (e) BIGINT (8 bytes) -> Signed: -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 | Unsigned: 0 to 18,446,744,073,709,551,615
+    Exact Decimals
+        (a) DECIMAL(p,s) -> Exact fixed‑point number | p = total digits (max 65) | s = digits after decimal
+        (b) NUMERIC(p,s) -> Same as DECIMAL (SQL standard equivalent)
+    Floating Point
+        (a) FLOAT (4 bytes) -> Approximate precision ~7 decimal digits
+        (b) DOUBLE (8 bytes) -> Approximate precision ~15 decimal digits
+        (c) REAL -> Usually same as DOUBLE in MySQL
+    Boolean/Bit
+        (a) BIT
+        (b) BOOLEAN/BOOL
+
+02. STRING:
+    Fixed Length
+        (a) CHAR(n) -> Fixed string length | 0–255 characters | padded with spaces
+    Variable Length
+        (a) VARCHAR(n) -> Variable string | upto 65,535 bytes per row (shared with other columns)
+    Large Text
+        (a) TINYTEXT -> Max 255 bytes
+        (b) TEXT -> Max 65,535 bytes (~64 KB)
+        (c) MEDIUMTEXT -> Max 16,777,215 bytes (~16 MB)
+        (d) LONGTEXT -> Max 4,294,967,295 bytes (~4 GB)
+    Binary Strings
+        (a) BINARY(n) -> Fixed binary data | up to 255 bytes
+        (b) VARBINARY(n) -> Variable binary data | up to 65,535 bytes
+        (c) BLOB -> Binary large object | up to 65,535 bytes (larger variants also exist)
+
+03. DATE & TIME:
+    (a) DATE (3 bytes) -> Range: 1000‑01‑01 to 9999‑12‑31
+    (b) TIME (3 bytes) -> Range: -838:59:59 to 838:59:59
+    (c) DATETIME (8 bytes) -> Range: 1000‑01‑01 00:00:00 to 9999‑12‑31 23:59:59
+    (d) TIMESTAMP (4 bytes) -> Range: 1970‑01‑01 to 2038‑01‑19 (Unix time based)
+    (e) YEAR (1 byte) -> Range: 1901 to 2155
+
+04. ENUMERATED:
+    Restricted value sets
+        (a) ENUM -> One value chosen from predefined list (max 65,535 possible values)
+        (b) SET -> Zero or more values chosen from list (max 64 members)
+    For Example: gender ENUM('male','female','rather not say')
+
+05. JSON:
+    (a) JSON -> Stores structured JSON documents | internally stored in binary format
+
+06. SPATIAL/GEOMETRIC:
+    Used for geographic data
+        (a) POINT -> Single coordinate pair (x,y)
+        (b) LINESTRING -> Series of connected points
+        (c) POLYGON -> Closed geometric shape
+        (d) GEOMETRY -> Generic spatial type (any geometry)
+        (e) MULTIPOINT -> Collection of points
+        (f) MULTIPOLYGON -> Collection of polygons
+
+07. SPECIAL/DATABASE-SPECIFIC:
+    Common examples
+        (a) UUID (PostgreSQL) -> 128‑bit universally unique identifier
+        (b) SERIAL (PostgreSQL auto‑increment) -> 4‑byte integer with automatic sequence
+        (c) AUTO_INCREMENT (MySQL attribute) -> Automatically increments numeric column values

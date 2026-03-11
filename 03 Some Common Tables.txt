@@ -1,0 +1,48 @@
+COMMON TABLES IN MODERN APPLICATION DATABASES:
+
+    01. AUTHENTICATION / IDENTITY
+        (a) users: id, username, email, password_hash, created_at, etc.
+        (b) sessions: id, user_id, session_token, ip_address, expires_at, etc.
+        (c) password_resets: id, user_id, reset_token, requested_at, expires_at, etc.
+        (d) email_verifications: id, user_id, verification_token, created_at, verified_at, etc.
+        (e) oauth_accounts: id, user_id, provider, provider_user_id, access_token, etc.
+        (f) api_keys: id, user_id, key_hash, permissions, created_at, etc.
+
+    02. USER PROFILE / PERSONAL DATA
+        (a) user_profiles: user_id, first_name, last_name, birth_date, bio, etc.
+        (b) addresses: id, user_id, street, city, state, country, postal_code, etc.
+        (c) phone_numbers: id, user_id, phone_number, verified, added_at, etc.
+        (d) social_links: id, user_id, platform, profile_url, etc.
+
+    03. CONTENT SYSTEMS
+        (a) posts: id, author_id, title, body, keywords, created_at, etc.
+        (b) comments: id, post_id, author_id, body, like_count, created_at, etc.
+        (c) likes: id, user_id, post_id, timestamp, device_used, etc.
+        (d) attachments: id, post_id, file_url, file_type, uploaded_at, etc.
+        (e) tags: id, name, description, etc.
+        (f) post_tags: post_id, tag_id, etc.
+
+    04. COMMERCE / PRODUCT SYSTEMS
+        (a) products: id, name, description, price, stock_quantity, etc.
+        (b) categories: id, name, description, etc.
+        (c) orders: id, user_id, total_amount, status, created_at, etc.
+        (d) order_items: id, order_id, product_id, quantity, price, etc.
+        (e) payments: id, order_id, payment_method, amount, paid_at, etc.
+        (f) transactions: id, payment_id, transaction_reference, status, processed_at, etc.
+
+    05. MESSAGING / COMMUNICATION
+        (a) messages: id, conversation_id, sender_id, body, sent_at, etc.
+        (b) conversations: id, created_at, last_message_at, etc.
+        (c) notifications: id, user_id, type, message, created_at, etc.
+        (d) email_logs: id, user_id, subject, status, sent_at, etc.
+
+    06. ANALYTICS / LOGGING
+        (a) login_history: id, user_id, ip_address, device, logged_in_at, etc.
+        (b) activity_logs: id, user_id, action, entity_type, created_at, etc.
+        (c) audit_logs: id, actor_id, action, target_table, timestamp, etc.
+        (d) events: id, user_id, event_name, metadata, occurred_at, etc.
+
+    07. GEOGRAPHIC / SPATIAL DATA
+        (a) locations: id, name, latitude, longitude, etc.
+        (b) delivery_zones: id, zone_name, region_description, etc.
+        (c) routes: id, start_location_id, end_location_id, distance, etc.
