@@ -1,0 +1,36 @@
+COMMON SQL CONSTRAINTS:
+    01. NULL
+        (a) Allows a column to store a missing or unknown value.
+        (b) Example: middle_name VARCHAR(50) NULL
+
+    02. NOT NULL
+        (a) Ensures that a column must always contain a value.
+        (b) Example: username VARCHAR(30) NOT NULL
+
+    03. UNIQUE
+        (a) Ensures all values in a column are distinct.
+        (b) Commonly used for usernames or emails.
+        (c) Example: email VARCHAR(255) UNIQUE
+
+    04. PRIMARY KEY
+        (a) Uniquely identifies each row in a table.
+        (b) Implies both UNIQUE and NOT NULL.
+        (c) Example: id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY
+
+    05. FOREIGN KEY
+        (a) Enforces a relationship between two tables.
+        (b) Ensures a value exists in a referenced table.
+        (c) Example: user_id INT, FOREIGN KEY (user_id) REFERENCES users(id)
+
+    06. DEFAULT
+        (a) Provides a default value when none is specified.
+        (b) Example: created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
+    07. CHECK
+        (a) Restricts values based on a condition.
+        (b) Example: age TINYINT CHECK (age >= 0)
+
+    08. AUTO_INCREMENT (MySQL)
+        (a) Automatically generates the next numeric value for a column.
+        (b) Typically used with primary keys.
+        (c) Example: id INT AUTO_INCREMENT
