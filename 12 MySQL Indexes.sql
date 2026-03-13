@@ -1,0 +1,5 @@
+--Interesting subject. Will need to study in-depth.
+--But in short, what I need to remember right now is that:
+    --a) It costs disk-space.
+    --b) It costs time in writing operations.
+    --c) It saves time in read operations.
