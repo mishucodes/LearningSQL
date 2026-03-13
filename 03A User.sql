@@ -7,7 +7,7 @@ CREATE TABLE users
     email VARCHAR(100) NOT NULL UNIQUE,
     password_hash CHAR(60) NOT NULL,
 
-    first_name VARCHAR(50),
+    first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50),
 
     birth_date DATE,

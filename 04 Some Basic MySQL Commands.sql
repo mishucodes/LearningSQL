@@ -1,22 +1,26 @@
 --Some Basic Queries:
 show databases; --show folders
+create database database_name; --create a folder
+create database if not exists database_name; --create a folder if it doesn't exist
 use database_name; --open folder
 show tables; --show excel files
 describe table_name; --see excel file's columns
-select count(*) from table_name; --shows the number of rows in the table
+
 
 --Creating a Table:
 create table table_name (column1 datatype constraints, column2 datatype constraints);
 --Renaming a Table:
 rename table a to b;
 --Modifying a Table:
-alter table table_name add column column_name datatype constraints;
-alter table table_name drop column column_name;
-alter table table_name modify column column_name datatype after other_column; --move column after another column
-alter table table_name modify column column_name datatype first; --move column to the first position
+alter table table_name add column column_name datatype constraints; --adding a column
+alter table table_name drop column column_name; --removing a column
+alter table table_name modify column column_name datatype constraints; --changing the datatype for a column
+alter table table_name modify column column_name datatype constraints after other_column; --move a column after another column
+alter table table_name modify column column_name datatype constraints first; --move a column to the first position
 --Deleting a Table:
 drop table table_name;
 truncate table table_name; --removes all rows but keeps the table
+
 
 --CRUD Operations in a Table:
 C
